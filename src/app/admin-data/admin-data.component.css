@@ -1,0 +1,103 @@
+/* Style for the container of the forms and navigation bar */
+.data-container {
+    font-size: 20px;
+    width: 100vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* Style for the left navigation bar */
+.data-nav {
+    user-select: none;
+    justify-self: flex-start;
+    list-style: none;
+    padding: 0;
+    margin-right: 20px;
+    margin-left: 30px;
+}
+
+.data-nav-item {
+    margin-bottom: 10px;
+}
+.invalid-input {
+  border: 1px solid red; /* Add a red border for invalid inputs */
+}
+
+.validation-error {
+  color: red; /* Set text color to red for validation error messages */
+  margin-top: 5px; /* Add some spacing between the error message and the input field */
+}
+
+
+.data-nav-link {
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    color: #000;
+    transition: background-color 0.2s;
+}
+
+.data-nav-link.active-link {
+    background-color: limegreen;
+    color: #fff;
+}
+
+/* Style for the right content area */
+.data-content {
+    flex-grow: 1;
+    max-width: 400px;
+}
+
+.data-form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex; /* Use flexbox to center content vertically and horizontally */
+    flex-direction: column; /* Stack child elements vertically */
+    align-items: center; /* Center child elements horizontally */
+  }
+  
+  /* Style for form labels */
+  .data-form-group label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+  
+  .data-form-control[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: #f5f5f5;
+    color: #000;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Style for the submit button */
+  .data-btn {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Style for the primary submit button */
+  .data-btn-primary {
+    background-color: limegreen;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* Style for the active link in the tab */
+  .data-tab .active-link {
+    font-weight: bold;
+  }
+  

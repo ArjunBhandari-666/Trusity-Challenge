@@ -1,0 +1,24 @@
+<div #dropListContainer class="dashboard" cdkDropListGroup>
+  <div class="visualization" cdkDropList [cdkDropListData]="visualization" (cdkDropListDropped)="dropItem($event)">
+    <div *ngIf="visualization.length === 0" class="placeholder">
+      Drag items here to Visualize
+    </div>
+
+    <div *ngFor="let item of visualization; let i = index" cdkDrag> 
+      <corp-line *ngIf="item === 'Line'"></corp-line>
+      <corp-bar *ngIf="item === 'Bar'"></corp-bar>
+      <corp-pie *ngIf="item === 'Pie'"></corp-pie>
+      <div *ngIf="item !== 'Line' && item !== 'Bar' && item !== 'Pie'">{{ item }}</div>
+    </div>
+  </div>
+
+  <div class="menu" cdkDropList [cdkDropListData]="menu" (cdkDropListDropped)="dropItem($event)">
+    <div *ngIf="menu.length === 0" class="placeholder">
+      All Options used
+    </div>
+
+    <div *ngFor="let item of menu; let i = index" cdkDrag [cdkDragData]="item">
+      {{ item }}
+    </div>
+  </div>
+</div>

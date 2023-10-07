@@ -1,0 +1,42 @@
+
+.dashboard {
+    width: 90vw;
+    height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+  }
+  
+  .menu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px; 
+    cursor:grab;
+  }
+
+  .menu div{
+    padding: 5px 20px;
+    border: 4px dotted black;
+    border-radius: 20px;
+    background-color: limegreen;
+  }
+  
+  .visualization {
+    background-color: aliceblue;
+    color: black;
+    border-radius: 30px;
+    border: 2px solid antiquewhite;
+    flex: 4; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    cursor:grab;
+  }
+  
+  
+  

@@ -1,0 +1,82 @@
+<div class="data-container">
+    <!-- Left Navigation Bar -->
+    <ul class="data-nav">
+        <li class="data-nav-item">
+            <a class="data-nav-link" (click)="activeTab = 'financial'" [class.active-link]="activeTab === 'financial'">Financial Data</a>
+        </li>
+        <li class="data-nav-item">
+            <a class="data-nav-link" (click)="activeTab = 'team'" [class.active-link]="activeTab === 'team'">Team Data</a>
+        </li>
+        <li class="data-nav-item">
+            <a class="data-nav-link" (click)="activeTab = 'product'" [class.active-link]="activeTab === 'product'">Product Data</a>
+        </li>
+    </ul>
+
+    <!-- Right Content Area -->
+    <div class="data-content">
+        <div *ngIf="activeTab === 'financial'" class="data-form-container">
+            <!-- Financial Data Form Contents -->
+            <form (ngSubmit)="submitFinancialForm()" #financialForm="ngForm">
+                <div class="data-form-group">
+                    <label for="financialYearInput">Year</label>
+                    <input type="number" placeholder="2023" class="data-form-control" id="financialYearInput" name="financialYearInput" [(ngModel)]="financialFormData.year" required
+                        [ngClass]="{ 'invalid-input': financialForm.submitted && financialForm.controls['financialYearInput'].invalid }">
+                    <div class="validation-error" *ngIf="financialForm.submitted && financialForm.controls['financialYearInput'].invalid">Invalid year. Year should be between 1900 and 2024.</div>
+                </div>
+                <div class="data-form-group">
+                    <label for="financialRevenueInput">Revenue</label>
+                    <input type="number" class="data-form-control" placeholder="in kAED" id="financialRevenueInput" name="financialRevenueInput" [(ngModel)]="financialFormData.revenue" required>
+                </div>
+                <div class="data-form-group">
+                    <label for="financialProfitInput">Profit</label>
+                    <input type="number" class="data-form-control" id="financialProfitInput" placeholder="in kAED" name="financialProfitInput" [(ngModel)]="financialFormData.profit" required>
+                </div>
+                <button type="submit" class="data-btn data-btn-primary">Submit Financial Data</button>
+            </form>
+        </div>
+
+        <div *ngIf="activeTab === 'team'" class="data-form-container">
+            <!-- Team Data Form Contents -->
+            <form (ngSubmit)="submitTeamForm()" #teamForm="ngForm">
+                <div class="data-form-group">
+                    <label for="teamEmployeesInput">No. of Employees</label>
+                    <input type="number" placeholder="Teaching + Non Teaching" class="data-form-control" id="teamEmployeesInput" name="teamEmployeesInput" [(ngModel)]="teamFormData.employees" required
+                        [ngClass]="{ 'invalid-input': teamForm.submitted && teamForm.controls['teamEmployeesInput'].invalid }">
+                </div>
+                <div class="data-form-group">
+                    <label for="teamClientsInput">No. of Clients</label>
+                    <input type="number" placeholder="Students/Institutions" class="data-form-control" id="teamClientsInput" name="teamClientsInput" [(ngModel)]="teamFormData.clients" required
+                        [ngClass]="{ 'invalid-input': teamForm.submitted && teamForm.controls['teamClientsInput'].invalid }">
+                </div>
+                <button type="submit" class="data-btn data-btn-primary">Submit Team Data</button>
+            </form>
+        </div>
+
+        <div *ngIf="activeTab === 'product'" class="data-form-container">
+            <!-- Product Data Form Contents -->
+            <form (ngSubmit)="submitProductForm()" #productForm="ngForm">
+                <div class="data-form-group">
+                    <label for="productSteamUsersInput">STEAM Users</label>
+                    <input type="number" class="data-form-control" placeholder="Total Active + Closed in current FY" id="productSteamUsersInput" name="productSteamUsersInput" [(ngModel)]="productFormData.steamUsers" required
+                        [ngClass]="{ 'invalid-input': productForm.submitted && productForm.controls['productSteamUsersInput'].invalid }">
+                </div>
+                <div class="data-form-group">
+                    <label for="productTruprenuerUsersInput">Truprenuer Users</label>
+                    <input type="number" class="data-form-control" id="productTruprenuerUsersInput" placeholder="Total Active + Closed in current FY" name="productTruprenuerUsersInput" [(ngModel)]="productFormData.truprenuerUsers" required
+                        [ngClass]="{ 'invalid-input': productForm.submitted && productForm.controls['productTruprenuerUsersInput'].invalid }">
+                </div>
+                <div class="data-form-group">
+                    <label for="productLanguageUsersInput">Language Users</label>
+                    <input type="number" class="data-form-control" placeholder="Total Active + Closed in current FY" id="productLanguageUsersInput" name="productLanguageUsersInput" [(ngModel)]="productFormData.languageUsers" required
+                        [ngClass]="{ 'invalid-input': productForm.submitted && productForm.controls['productLanguageUsersInput'].invalid }">
+                </div>
+                <div class="data-form-group">
+                    <label for="productOtherUsersInput">Other Users</label>
+                    <input type="number" class="data-form-control" placeholder="Total Active + Closed in current FY" id="productOtherUsersInput" name="productOtherUsersInput" [(ngModel)]="productFormData.otherUsers" required
+                        [ngClass]="{ 'invalid-input': productForm.submitted && productForm.controls['productOtherUsersInput'].invalid }">
+                </div>
+                <button type="submit" class="data-btn data-btn-primary">Submit Product Data</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+
+<div class="navbar page">
+  <h1>Trusity Admin Section</h1>
+  <nav>
+    <ul class="nav-container">
+      <li class="nav-item">
+        <a routerLink="/dashboard"
+           class="nav-link"
+           [routerLinkActiveOptions]="{ exact: true }"
+           routerLinkActive="active-link"
+        >
+          Dashboard
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/admin-data"
+           class="nav-link"
+           [routerLinkActiveOptions]="{ exact: true }"
+           routerLinkActive="active-link"
+        >
+          Admin Data
+        </a>
+      </li>
+      <!-- Add more navigation links for other routes -->
+    </ul>
+  </nav>
+</div>
+<router-outlet></router-outlet>
